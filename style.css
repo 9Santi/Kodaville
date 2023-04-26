@@ -1,0 +1,44 @@
+/* darkblue: #24497D */
+/* softblue: #67AAED */
+
+/* Style général */
+p {
+  font-size: 16px;
+}
+
+h1 {
+  color: #24497d;
+}
+
+/* Formulaire */
+
+#formulaire {
+  background-color: #67aaed;
+  border: solid #24497d 2px;
+}
+
+.searchbar {
+  border-radius: 20px;
+}
+
+.loupe {
+  background-color: white;
+  border-radius: 20px;
+  fill: #24497d;
+}
+
+.loupe:hover {
+  background-color: #24497d;
+  border-radius: 20px;
+  color: white;
+}
+
+/* Réponse et map */
+
+#reponse {
+  font-weight: bold;
+}
+
+#reponse span {
+  color: #24497d;
+}
