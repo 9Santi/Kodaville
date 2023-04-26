@@ -1,0 +1,4 @@
+curl 'https://geo.api.gouv.fr/communes?nom=clermont&fields=departement&boost=population&limit=5' HTTP/1.1
+###
+
+curl curl 'https://geo.api.gouv.fr/communes?codePostal=78000'

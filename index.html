@@ -72,13 +72,16 @@
     </section>
     <!-- Formulaire -->
     <section id="Form" class="container d-flex justify-content-center">
-      <div id="formulaire" class="col-12 col-sm-6 p-5 rounded-4 shadow-lg">
-        <form action="search">
+      <div id="formulaire" class="col-12 col-md-8 p-5 rounded-4 shadow-lg">
+        <form role="search">
           <div class="row">
             <input
+              id="searchCP"
+              pattern="[0-9]{5}"
+              maxlength="5"
               type="text"
               class="form-control col me-2 searchbar"
-              placeholder="Code postal"
+              placeholder="Code postal (00000)"
               aria-label="Code postal"
               aria-describedby="button-addon2"
             />
@@ -98,6 +101,7 @@
           </div>
           <div class="row mt-4">
             <input
+              id="searchVille"
               type="text"
               class="form-control col me-2 searchbar"
               placeholder="Ville"
@@ -122,19 +126,23 @@
       </div>
     </section>
     <!-- Réponse et map -->
-    <section class="container text-center mx-5">
-      <p id="reponse">
-        Ta ville est <span id="ville">x</span> et son code postal est
-        <span id="codepostal">x</span>!
-      </p>
-      <h2 class="text-center mt-5 fw-bold">Où te situes-tu sur la carte ?</h2>
-      <div id="logo" class="mt-5">
+    <section class="container text-center my-4">
+      <div class="row">
+        <div class="reponse" class="col-12">Ton résultat est :</div>
+        <h2 class="reponse">
+          <span id="ville">Ville</span>&nbsp;
+          <span id="codepostal">Code postaux</span>&nbsp;
+        </h2>
+      </div>
+      <p class="text-center mt-4 fw-bold">Où te situes-tu sur la carte ?</p>
+      <div id="logo" class="mt-2">
         <a
           href="https://www.google.fr/maps/place/Clermont-Ferrand"
           alt="map google"
           title="Map google"
         >
           <svg
+            id="map"
             width="47"
             height="75"
             fill="none"
@@ -161,6 +169,7 @@
             />
           </svg>
         </a>
+        <p id="cliquemoi">CLIQUE SUR MOI !</p>
       </div>
     </section>
   </body>
@@ -169,4 +178,5 @@
     integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
     crossorigin="anonymous"
   ></script>
+  <script src="index.js"></script>
 </html>
