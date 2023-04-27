@@ -1,14 +1,11 @@
 # Recherche de code postal via l'API INSEE
 
-Ce site web permet de rechercher un code postal en France en utilisant l'API INSEE. Il suffit de saisir une ville ou un code postal correspondant s'affichera.
+Ce site web permet de rechercher un code postal en France en utilisant l'API INSEE. Il suffit de saisir un code postal la ville correspondant s'affichera.
 
 ## Fonctionnalités
 
 - Recherche de code postal à partir d'une ville
 - Affichage du code postal correspondant à la ville
-- Recherche d'une ville à partir d'un code postal
-- Affichage de la ville correspondant au code postal
-- Affichage sur la carte l'emplacement de votre recherche
 
 ## Utilisation de l'API INSEE
 
@@ -25,4 +22,4 @@ Ce site utilise l'API INSEE pour récupérer les données de codes postaux. L'AP
 
 ## A propos
 
-Ce site a été créé par [9Santi] dans le cadre d'un projet personnel.
+Ce site a été créé par [9Santi] dans le cadre d'un projet éducatif.
