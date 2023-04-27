@@ -1,11 +1,12 @@
 //curl 'https://geo.api.gouv.fr/communes?nom=Nantes&fields=departement&boost=population&limit=5'
-document.addEventListener("input", searchCP);
-document.addEventListener("submit", searchVille);
+document.addEventListener("submit", searchCP);
+
 
 
 // CP
 function searchCP(event){
   event.preventDefault();
+  document.querySelector("#ville").value = "";
   const cpInput = document.querySelector("#searchCP").value;
   const cpUrl = `https://geo.api.gouv.fr/communes?codePostal=${cpInput}`;
   fetch(cpUrl)
@@ -18,41 +19,35 @@ function searchCP(event){
 
               // Affichage du nom de la commune dans le champ #ville
               document.querySelector("#ville").value = nomCommune;
+              
   })
 
   .catch((error) => {
     console.error(error);
-    document.querySelector("#ville").textContent = "Non";
-    document.querySelector("#codepostal").textContent = "valide!";
+    document.querySelector("#codepostal").textContent = "Non valide!";
 });
 }
-
-// Ville
-function searchVille(event){
-  event.preventDefault();
-  const cityInput = document.querySelector("#searchVille").value;
-  const cityUrl = `https://geo.api.gouv.fr/communes?nom=${cityInput}`;
-  fetch(cityUrl)
-    .then((response) => response.json())
-    .then((data) => {
-      console.log(data);
-      showData(data);
-    })
-    .catch((error) => console.error(error));
-}
+const select = document.createElement("select");
 
 function showData(data) {
-  const communes = data.map(d => d.nom); // récupère les noms des communes
-  const cp = data[0].codesPostaux; // récupère le premier code postal renvoyé
-  const select = document.createElement("select"); // crée un élément liste déroulante
-  communes.forEach(commune => { // pour chaque commune
-      const option = document.createElement("option"); // crée une option de liste déroulante
-      option.textContent = commune; // ajoute le nom de la commune comme texte
-      select.appendChild(option); // ajoute l'option à l'élément liste déroulante
-  });
-  document.querySelector("#codepostal").innerHTML = ""; // efface le contenu précédent
+  while (select.hasChildNodes()) {
+    select.removeChild(select.lastChild);
+  }
+  const communes = data.map(d => d.nom);
+  const cp = data[0].codesPostaux[0];
+  document.querySelector("#codepostal").textContent = cp;
+  
+  // Effacer le contenu précédent du champ ville
   document.querySelector("#ville").innerHTML = "";
-  document.querySelector("#codepostal").textContent = cp; // ajoute le code postal à l'élément résultat
-  document.querySelector("#ville").appendChild(select); // ajoute l'élément liste déroulante à l'élément résultat
-  document.querySelector("#logo a").href = (url=`https://www.google.fr/maps/place/${cp}`);
+
+  communes.forEach(commune => {
+      const option = document.createElement("option");
+      option.textContent = commune;
+      select.appendChild(option);
+  });
+  
+  document.querySelector("#ville").appendChild(select);
+  document.querySelector("#searchCP").value = "";
 }
+
+

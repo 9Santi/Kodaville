@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Trouver facilement votre code postal et ville, le site utilise une API de l'INSEE"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Kodaville</title>
+  </head>
+  <body>
+    <!-- Titre -->
+    <h1 class="fw-bold col-12 text-center my-5">KODAVILLE</h1>
+    <!-- Accueil et présentation -->
+    <section id="textacceuil" class="container d-flex justify-content-center">
+      <div class="m-5">
+        <p class="col-12">
+          <svg
+            width="23"
+            height="34"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M15.4898 33.2417C13.8579 33.7141 11.6305 34 9.18919 34C6.7479 34 4.52044 33.7141 2.88858 33.2417C2.07573 33.0064 1.38449 32.7175 0.885988 32.3763C0.402359 32.0453 0 31.5928 0 31.0135C0 30.4342 0.402359 29.9817 0.885988 29.6507C1.38449 29.3095 2.07573 29.0206 2.88858 28.7853C4.52044 28.3129 6.7479 28.027 9.18919 28.027C11.6305 28.027 13.8579 28.3129 15.4898 28.7853C16.3026 29.0206 16.9939 29.3095 17.4924 29.6507C17.976 29.9817 18.3784 30.4342 18.3784 31.0135C18.3784 31.5928 17.976 32.0453 17.4924 32.3763C16.9939 32.7175 16.3026 33.0064 15.4898 33.2417ZM9.18919 33.5405C14.0105 33.5405 17.9189 32.4091 17.9189 31.0135C17.9189 29.6179 14.0105 28.4865 9.18919 28.4865C4.36789 28.4865 0.459459 29.6179 0.459459 31.0135C0.459459 32.4091 4.36789 33.5405 9.18919 33.5405Z"
+              fill="black"
+            />
+            <path
+              d="M17.9189 31.0135C17.9189 32.4091 14.0105 33.5405 9.1892 33.5405C4.36791 33.5405 0.459473 32.4091 0.459473 31.0135C0.459473 29.6179 4.36791 28.4865 9.1892 28.4865C14.0105 28.4865 17.9189 29.6179 17.9189 31.0135Z"
+              fill="#A1E07A"
+            />
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M7.81081 30.3243V2.75674H10.1081V30.3243H7.81081Z"
+              fill="white"
+            />
+            <path
+              d="M10.5676 2.06755C10.5676 2.95568 9.84759 3.67566 8.95946 3.67566C8.07132 3.67566 7.35135 2.95568 7.35135 2.06755C7.35135 1.17942 8.07132 0.459442 8.95946 0.459442C9.84759 0.459442 10.5676 1.17942 10.5676 2.06755Z"
+              fill="white"
+            />
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M7.81081 3.19301C7.68657 3.06623 7.58316 2.91897 7.5061 2.75676C7.43826 2.61393 7.39084 2.45952 7.36764 2.2973C7.3569 2.22227 7.35135 2.14557 7.35135 2.06757C7.35135 1.17943 8.07133 0.459459 8.95946 0.459459C9.84759 0.459459 10.5676 1.17943 10.5676 2.06757C10.5676 2.14557 10.562 2.22227 10.5513 2.2973C10.5281 2.45952 10.4807 2.61393 10.4128 2.75676C10.3358 2.91897 10.2323 3.06623 10.1081 3.19301V30.3243H7.81081V3.19301ZM7.35135 3.36722C7.06401 3.01213 6.89189 2.55995 6.89189 2.06757C6.89189 0.925681 7.81757 0 8.95946 0C10.1013 0 11.027 0.925681 11.027 2.06757C11.027 2.55995 10.8549 3.01213 10.5676 3.36722V30.7838H7.35135V3.36722Z"
+              fill="black"
+            />
+            <path
+              d="M21.8243 9.37384C22.7432 9.90438 22.7432 11.2307 21.8243 11.7613L11.4865 17.7298C10.5676 18.2604 9.41893 17.5972 9.41893 16.5361L9.41893 4.599C9.41893 3.53792 10.5676 2.87475 11.4865 3.40529L21.8243 9.37384Z"
+              fill="#F3453A"
+            />
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M11.2568 17.3319L21.5946 11.3634C22.2072 11.0097 22.2072 10.1254 21.5946 9.77175L11.2568 3.80319C10.6442 3.4495 9.87839 3.89162 9.87839 4.599L9.87838 16.5361C9.87838 17.2435 10.6442 17.6856 11.2568 17.3319ZM21.8243 11.7613C22.7432 11.2307 22.7432 9.90438 21.8243 9.37384L11.4865 3.40529C10.5676 2.87475 9.41893 3.53792 9.41893 4.599L9.41893 16.5361C9.41893 17.5972 10.5676 18.2604 11.4865 17.7298L21.8243 11.7613Z"
+              fill="black"
+            />
+          </svg>
+          Trouve facilement ta ville grâce au code postal et vice-versa.
+        </p>
+      </div>
+    </section>
+    <!-- Formulaire -->
+    <section id="Form" class="container d-flex justify-content-center">
+      <div id="formulaire" class="col-12 col-md-8 p-5 rounded-4 shadow-lg">
+        <form role="search">
+          <div class="row">
+            <input
+              id="searchCP"
+              pattern="[0-9]{5}"
+              maxlength="5"
+              type="text"
+              class="form-control col me-2 searchbar"
+              placeholder="Code postal (00000)"
+              aria-label="Code postal"
+              aria-describedby="button-addon2"
+            />
+            <button class="btn col-auto loupe" type="submit" id="button-addon1">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-search"
+              >
+                <path
+                  d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"
+                />
+              </svg>
+            </button>
+          </div>
+          <div class="row mt-4">
+            <h2 class="reponse">
+              <span id="ville"></span>
+              <span id="codepostal">Affiché ici.</span>&nbsp;
+            </h2>
+            <input
+              id="searchVille"
+              type="text"
+              class="form-control col me-2 searchbar"
+              placeholder="Ville"
+              aria-label="Ville"
+              aria-describedby="button-addon2"
+            />
+            <button class="btn col-auto loupe" type="submit" id="button-addon2">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-search"
+              >
+                <path
+                  d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"
+                />
+              </svg>
+            </button>
+          </div>
+        </form>
+      </div>
+    </section>
+    <!-- Réponse et map -->
+    <section class="container text-center my-4">
+      <div class="row" id="bordereponse">
+        <div class="reponse col-12">Ton résultat est :</div>
+      </div>
+      <p class="text-center mt-4 fw-bold">Où te situes-tu sur la carte ?</p>
+      <div id="logo" class="mt-2">
+        <a
+          href="https://www.google.fr/maps/place/Clermont-Ferrand"
+          alt="map google"
+          title="Map google"
+        >
+          <svg
+            id="map"
+            width="47"
+            height="75"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M24.0465 73.1395C29.8469 73.1395 35.1354 72.4703 39.0055 71.3667C40.9338 70.8169 42.5669 70.1434 43.7409 69.3519C44.8797 68.5841 45.8139 67.5437 45.8139 66.2176C45.8139 64.8916 44.8797 63.8511 43.7409 63.0834C42.5669 62.2919 40.9338 61.6184 39.0055 61.0685C35.1354 59.965 29.8469 59.2957 24.0465 59.2957C18.2461 59.2957 12.9576 59.965 9.08747 61.0685C7.15923 61.6184 5.52611 62.2919 4.35206 63.0834C3.2133 63.8511 2.27905 64.8916 2.27905 66.2176C2.27905 67.5437 3.2133 68.5841 4.35206 69.3519C5.52611 70.1434 7.15923 70.8169 9.08747 71.3667C12.9576 72.4703 18.2461 73.1395 24.0465 73.1395Z"
+              fill="#A1E07A"
+              stroke="black"
+              stroke-width="2"
+            />
+            <path
+              d="M46 21.3685C46 27.092 43.4169 38.8661 39.191 49.2337C37.0822 54.4074 34.5926 59.1585 31.8639 62.5978C29.1064 66.0734 26.2731 68.0026 23.5 68.0026C20.7269 68.0026 17.8936 66.0734 15.1361 62.5978C12.4074 59.1585 9.91785 54.4074 7.80902 49.2337C3.58314 38.8661 1 27.092 1 21.3685C1 10.2067 10.982 1 23.5 1C36.018 1 46 10.2067 46 21.3685Z"
+              fill="#F3453A"
+              stroke="black"
+              stroke-width="2"
+            />
+            <ellipse
+              cx="23.5"
+              cy="21.3685"
+              rx="9.94231"
+              ry="9.79392"
+              fill="white"
+            />
+          </svg>
+        </a>
+        <p id="cliquemoi">CLIQUE SUR MOI !</p>
+      </div>
+    </section>
+  </body>
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+    crossorigin="anonymous"
+  ></script>
+  <script src="index.js"></script>
+</html>

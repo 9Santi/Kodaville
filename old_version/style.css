@@ -11,11 +11,6 @@ h1 {
   text-decoration: underline #67aaed;
 }
 
-body {
-  height: 100vh;
-  overflow: hidden;
-}
-
 /* Formulaire */
 
 #formulaire {
@@ -65,7 +60,6 @@ select {
 }
 
 #map {
-  height: 150px;
   position: relative;
   animation: bounce 1.5s infinite;
   transform-origin: center bottom;
